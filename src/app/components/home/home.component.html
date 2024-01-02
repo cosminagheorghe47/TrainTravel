@@ -1,0 +1,56 @@
+<!-- home.component.html -->
+<div class="container">
+  <div class="login-search-container">
+    <!-- Display user info if logged in -->
+    <div *ngIf="userData" class="user-info">
+      
+      <p>Logged in as: {{ userData.firstName }} {{ userData.lastName }}</p>
+      <p>Email: {{ userData.email }}</p>
+      <p>Phone: {{ userData.phone }}</p>
+      <button (click)="onLogout()" class="button logout-button">Logout</button>
+    </div>
+
+    <!-- Display login link if not logged in -->
+    <div *ngIf="!userData" class="login-info">
+      <p>Access your account for a better experience!</p>
+      <a routerLink="/login" class="button">Log in</a>
+      <p>or</p>
+      <a routerLink="/register" class="button">Register</a>
+    </div>
+
+    <!-- Stylish search form -->
+    <div class="search-form">
+      <h3>Search for Trains</h3>
+      <form>
+        <div class="form-group">
+          <label for="departure">Departure Station:</label>
+          <input type="text" id="departure" name="departure" required>
+        </div>
+
+        <div class="form-group">
+          <label for="arrival">Arrival Station:</label>
+          <input type="text" id="arrival" name="arrival" required>
+        </div>
+
+        <div class="form-group">
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+
+        <button type="submit" class="button">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Display stations -->
+  <div class="stations-container">
+    <h3>Stations</h3>
+    <div class="stations-list" *ngIf="(stations$ | async) as stations">
+      <div class="station" *ngFor="let station of stations">
+        <span class="station-id">{{ station.stationID }}</span>
+        {{ station.stationName }}
+      </div>
+    </div>
+  </div>
+  
+</div>

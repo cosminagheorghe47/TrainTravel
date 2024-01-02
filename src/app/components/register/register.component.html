@@ -1,0 +1,35 @@
+<!-- login.component.html -->
+<div class="register-container">
+    <h2>Login</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="id">Code</label>
+        <input type="number" id="id" formControlName="id" />
+        <div *ngIf="registerForm.get('id')?.hasError('idRange')">
+            Please enter an id between 1 and 198.
+          </div>
+      </div>  
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" formControlName="firstName" />
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" formControlName="lastName" />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" formControlName="email" />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" formControlName="phone" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" />
+      </div>
+      <button type="submit" [disabled]="registerForm.invalid">Register</button>
+    </form>
+  </div>
+  

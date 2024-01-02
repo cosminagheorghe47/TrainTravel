@@ -1,0 +1,34 @@
+/* login.component.css */
+.register-container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #DFB6B2;
+  }
+  
+  .form-group {
+    margin-bottom: 1em;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+  
+  input {
+    width: 100%;
+    padding: 0.5em;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: white;
+    padding: 0.5em;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+  
