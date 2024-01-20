@@ -1,0 +1,36 @@
+.search-form {
+    width: 70%;
+    background-color: #854F6c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: rgb(239, 214, 239);
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(203, 100, 227);
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .button {
+    background-color: #8f5380;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }

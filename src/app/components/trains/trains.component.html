@@ -1,1 +1,32 @@
-<p>trains works!</p>
+
+  <div class="page-container">
+    <div class="search-form-container">
+      <app-search></app-search>
+      <a routerLink="/" class="home-icon">
+        <i class="fas fa-home"></i> Home
+      </a>
+    </div>
+    <div class="train-list">
+        <h2 class="res-text">Your Results:</h2>
+      <div *ngFor="let train of trainResults" class="train-box">
+        <div class="train-details">
+            <div class="detail-row">
+              <p><strong>{{ train.trainName }}</strong> </p>
+              <p>Nr: <strong>{{ train.trainNo }}</strong></p>
+            </div>
+            <div class="detail-row">
+              <p>From: <strong>{{ train.departureStationName }}</strong></p>
+              <p>To: <strong>{{ train.arrivalStationName }}</strong></p>
+            </div>
+            <div class="detail-row">
+                <p>Departure Time: <strong>{{ train.departureTime }}</strong></p>
+                <p>Arrival Time: <strong>{{ train.arrivalTime }}</strong></p>
+            </div>
+            <div class="detail-row">
+                <p>Total Seats: {{ train.totalSeats }}</p>
+                <p>Booked Seats: {{ train.bookedSeats }}</p>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,25 @@
+<!-- search.component.html -->
+
+<h3>Search for Trains</h3>
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="departure">Departure Station:</label>
+    <select id="departure" name="departure" [(ngModel)]="searchForm.departure" required>
+      <option *ngFor="let station of stations" [value]="station.stationID">{{ station.stationName }}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="arrival">Arrival Station:</label>
+    <select id="arrival" name="arrival" [(ngModel)]="searchForm.arrival" required>
+      <option *ngFor="let station of stations" [value]="station.stationID">{{ station.stationName }}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="date">Date:</label>
+    <input type="date" id="date" name="date" [(ngModel)]="searchForm.date" required>
+  </div>
+
+  <button type="submit" class="button">Search</button>
+</form>
