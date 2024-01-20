@@ -13,6 +13,7 @@ export class StationService {
   constructor(private http: HttpClient) { }
 
   getStations(): Observable<any> {
+    console.log("get statii");
     return this.http.get<any>(this.apiUrl);
   }
 }
