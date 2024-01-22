@@ -31,20 +31,27 @@ export class SearchComponent implements OnInit {
       }
     );
   }
-
   onSubmit(): void {
     const departureStationId = this.searchForm.departure;
     const arrivalStationId = this.searchForm.arrival;
     const departureDate = this.searchForm.date;
-
+  
     const apiUrl = `https://freeapi.miniprojectideas.com/api/TrainApp/GetTrainsBetweenStations?departureStationId=${departureStationId}&arrivalStationId=${arrivalStationId}&departureDate=${departureDate}`;
-    console.log(departureStationId,arrivalStationId,departureDate);
+  
     this.http.get(apiUrl).subscribe(
       (response: any) => {
         if (Array.isArray(response.data)) {
           this.searchResults = response.data;
-          console.log(this.searchResults);
-          this.router.navigate(['/trains'], { queryParams: { results: JSON.stringify(this.searchResults) } });
+  
+          // Move the navigation inside the subscription block
+          this.router.navigate(['/trains'], {
+            queryParams: {
+              departure: departureStationId,
+              arrival: arrivalStationId,
+              date: departureDate,
+              results: JSON.stringify(this.searchResults)
+            }
+          });
         } else {
           console.error('Invalid API response structure:', response);
         }
@@ -54,4 +61,6 @@ export class SearchComponent implements OnInit {
       }
     );
   }
+  
+  
 }

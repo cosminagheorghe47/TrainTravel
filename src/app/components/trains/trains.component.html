@@ -5,6 +5,11 @@
       <a routerLink="/" class="home-icon">
         <i class="fas fa-home"></i> Home
       </a>
+      <div class="search-params">
+        <p><strong>Departure:</strong> {{ trainResults.length > 0 ? trainResults[0].departureStationName : '' }}</p>
+        <p><strong>Arrival:</strong> {{ trainResults.length > 0 ? trainResults[0].arrivalStationName : '' }}</p>
+        <p><strong>Date:</strong> {{ date }}</p>
+      </div>
     </div>
     <div class="train-list">
         <h2 class="res-text">Your Results:</h2>
@@ -26,6 +31,9 @@
                 <p>Total Seats: {{ train.totalSeats }}</p>
                 <p>Booked Seats: {{ train.bookedSeats }}</p>
             </div>
+            <button class="booking-button" (click)="bookTrain(train)">
+              Book Now
+            </button>
           </div>
       </div>
     </div>
