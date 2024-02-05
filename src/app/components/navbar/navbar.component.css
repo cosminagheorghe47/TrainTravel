@@ -1,11 +1,7 @@
-/* navbar.component.css */
-
-/* Add a class for the background image */
 .navbar-with-background {
   position: relative;
 }
 
-/* Add a dark overlay to enhance text visibility */
 .navbar-with-background::before {
   content: "";
   position: absolute;
@@ -13,29 +9,40 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(1, 0, 0, 0.3); /* Dark overlay with 30% opacity */
+  background-color: rgba(1, 0, 0, 0.3);
 }
 
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end; /* Align items to the bottom */
+  align-items: flex-end;
   text-align: center;
   padding: 10px 20px;
-  background-color: transparent; /* Make the background color transparent */
-  color: #fff; /* White text color */
-  height: 200px; /* Adjust the height */
-  padding-bottom: 0px; /* Adjust the padding-bottom to move the text lower */
+  background-color: transparent;
+  color: #fff;
+  height: 200px;
+  padding-bottom: 0px;
 }
 
-/* Add your additional styles for the navbar */
 .logo-img {
-  display: none; /* Hide the img element if it's not needed */
+  display: none;
 }
 
-/* Add styles for the navbar text */
 .navbar-text {
-  font-size: 40px; /* Adjust the font size */
-  font-family: 'Monaco', monospace; /* Use your preferred font */
-  z-index: 1; /* Ensure text is on top of the overlay */
+  font-size: 40px;
+  font-family: 'Monaco', monospace;
+  z-index: 1;
+}
+
+.navbar-home {
+  margin-right: 10px;
+  z-index: 2;
+}
+
+.home-icon {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 1px solid #000;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
