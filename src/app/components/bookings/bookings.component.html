@@ -1,1 +1,19 @@
-<p>bookings works!</p>
+<div class="form-container">
+  <h2>Booking Form</h2>
+  <form [formGroup]="bookingForm" (ngSubmit)="book()">
+    <!-- Define your form controls here -->
+    <div class="form-row">
+      <label for="passengerName">Passenger Name:</label>
+      <input type="text" id="passengerName" formControlName="passengerName">
+    </div>
+
+    <div class="form-row">
+      <label for="age">Age:</label>
+      <input type="text" id="age" formControlName="age">
+    </div>
+
+    <div class="form-row">
+      <button type="submit">Book Now</button>
+    </div>
+  </form>
+</div>

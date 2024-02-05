@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class StationService {
-  private apiUrl = 'https://freeapi.miniprojectideas.com/api/TrainApp/GetAllStations';
+  private apiUrl = 'https://freeapi.gerasim.in/api/TrainApp/GetAllStations';
 
   constructor(private http: HttpClient) { }
 

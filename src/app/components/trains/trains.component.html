@@ -1,40 +1,34 @@
-
-  <div class="page-container">
-    <div class="search-form-container">
-      <app-search></app-search>
-      <a routerLink="/" class="home-icon">
-        <i class="fas fa-home"></i> Home
-      </a>
-      <div class="search-params">
-        <p><strong>Departure:</strong> {{ trainResults.length > 0 ? trainResults[0].departureStationName : '' }}</p>
-        <p><strong>Arrival:</strong> {{ trainResults.length > 0 ? trainResults[0].arrivalStationName : '' }}</p>
-        <p><strong>Date:</strong> {{ date }}</p>
-      </div>
-    </div>
-    <div class="train-list">
-        <h2 class="res-text">Your Results:</h2>
-      <div *ngFor="let train of trainResults" class="train-box">
-        <div class="train-details">
-            <div class="detail-row">
-              <p><strong>{{ train.trainName }}</strong> </p>
-              <p>Nr: <strong>{{ train.trainNo }}</strong></p>
-            </div>
-            <div class="detail-row">
-              <p>From: <strong>{{ train.departureStationName }}</strong></p>
-              <p>To: <strong>{{ train.arrivalStationName }}</strong></p>
-            </div>
-            <div class="detail-row">
-                <p>Departure Time: <strong>{{ train.departureTime }}</strong></p>
-                <p>Arrival Time: <strong>{{ train.arrivalTime }}</strong></p>
-            </div>
-            <div class="detail-row">
-                <p>Total Seats: {{ train.totalSeats }}</p>
-                <p>Booked Seats: {{ train.bookedSeats }}</p>
-            </div>
-            <button class="booking-button" (click)="bookTrain(train)">
-              Book Now
-            </button>
-          </div>
+<div class="page-container">
+  <div class="train-list">
+    <h2 class="res-text">Your Results:</h2>
+    <div *ngFor="let train of trainResults" class="train-box">
+      <div class="train-details">
+        <div class="detail-row">
+          <p><strong>{{ train.trainName }}</strong></p>
+          <p>Nr: <strong>{{ train.trainNo }}</strong></p>
+        </div>
+        <div class="detail-row">
+          <p>From: <strong>{{ train.departureStationName }}</strong></p>
+          <p>To: <strong>{{ train.arrivalStationName }}</strong></p>
+        </div>
+        <div class="detail-row">
+          <p>Departure Time: <strong>{{ train.departureTime }}</strong></p>
+          <p>Arrival Time: <strong>{{ train.arrivalTime }}</strong></p>
+        </div>
+        <div class="detail-row">
+          <p>Total Seats: {{ train.totalSeats }}</p>
+          <p>Booked Seats: {{ train.bookedSeats }}</p>
+        </div>
+        <button class="booking-button" (click)="bookTrain(train)">Book Now</button>
       </div>
     </div>
   </div>
+  <div class="search-form-container">
+    <app-search></app-search>
+    <div class="search-params">
+      <p><strong>Departure:</strong> {{ trainResults.length > 0 ? trainResults[0].departureStationName : '' }}</p>
+      <p><strong>Arrival:</strong> {{ trainResults.length > 0 ? trainResults[0].arrivalStationName : '' }}</p>
+      <p><strong>Date:</strong> {{ date }}</p>
+    </div>
+  </div>
+</div>

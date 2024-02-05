@@ -16,13 +16,23 @@ interface UserData {
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://freeapi.miniprojectideas.com/api/TrainApp';
+  private apiUrl = 'https://freeapi.gerasim.in/api/TrainApp';
   private currentUserSubject: BehaviorSubject<UserData | null> = new BehaviorSubject<UserData | null>(null);
 
   currentUser$: Observable<UserData | null> = this.currentUserSubject.asObservable();
 
   constructor(private http: HttpClient) {}
+  private bookingId: string | null = null;
 
+  setBookingId(id: string): void {
+    console.log('set');
+    this.bookingId = id;
+  }
+
+  getBookingId(): string | null {
+    console.log('get');
+    return this.bookingId;
+  }
   login(username: string, password: string): Observable<any> {
     const body = { phone: username, password };
     return this.http.post(`${this.apiUrl}/Login`, body).pipe(

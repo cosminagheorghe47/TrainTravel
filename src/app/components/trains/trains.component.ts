@@ -12,6 +12,7 @@ export class TrainsComponent implements OnInit {
   departure: string | null = null;
   arrival: string | null = null;
   date: string | null = null;
+  trainId:string | null = null;
 
   constructor(private route: ActivatedRoute, private authService: AuthService, private router: Router) {}
 
@@ -26,10 +27,6 @@ export class TrainsComponent implements OnInit {
         this.trainResults = JSON.parse(results);
       }
 
-      console.log('Departure:', this.departure);
-      console.log('Arrival:', this.arrival);
-      console.log('Date:', this.date);
-
       console.log('Train Results:', this.trainResults);
     });
   }
@@ -39,6 +36,8 @@ export class TrainsComponent implements OnInit {
   }
 
   bookTrain(train: any): void {
-    this.router.navigate(['/bookings']);
+    console.log(train.trainId);
+    this.authService.setBookingId(train.trainId);
+    this.router.navigate(['/bookings', train.trainId]);
   }
 }

@@ -36,14 +36,14 @@ export class SearchComponent implements OnInit {
     const arrivalStationId = this.searchForm.arrival;
     const departureDate = this.searchForm.date;
   
-    const apiUrl = `https://freeapi.miniprojectideas.com/api/TrainApp/GetTrainsBetweenStations?departureStationId=${departureStationId}&arrivalStationId=${arrivalStationId}&departureDate=${departureDate}`;
+    const apiUrl = `https://freeapi.gerasim.in/api/TrainApp/GetTrainsBetweenStations?departureStationId=${departureStationId}&arrivalStationId=${arrivalStationId}&departureDate=${departureDate}`;
   
     this.http.get(apiUrl).subscribe(
       (response: any) => {
         if (Array.isArray(response.data)) {
           this.searchResults = response.data;
   
-          // Move the navigation inside the subscription block
+          
           this.router.navigate(['/trains'], {
             queryParams: {
               departure: departureStationId,

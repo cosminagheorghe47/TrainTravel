@@ -7,7 +7,11 @@
       <p>Logged in as: {{ userData.firstName }} {{ userData.lastName }}</p>
       <p>Email: {{ userData.email }}</p>
       <p>Phone: {{ userData.phone }}</p>
-      <button (click)="onLogout()" class="button logout-button">Logout</button>
+      <div class="buttons">
+        <button (click)="onMyBookings()" class="button">My Bookings</button>
+        <button (click)="onLogout()" class="button logout-button">Logout</button>
+      </div>
+      
     </div>
 
     
@@ -23,6 +27,7 @@
     </div>
   </div>
 
+  <div id="mapid"></div>
   
   <div class="stations-container">
     <h3>Stations</h3>

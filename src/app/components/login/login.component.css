@@ -8,12 +8,12 @@
   background-color: #DFB6B2;
   color: #fff;
   min-height: 600px;
-  width: 1000px;
+  width: 100%;
 }
 
 .login-container {
-  width: 100%; /* Set width to 100% */
-  max-width: 600px; /* Set a max-width to control the container width */
+  width: 100%; 
+  max-width: 600px;
   background-color: #854F6c;
   padding: 20px;
   border-radius: 8px;

@@ -14,19 +14,21 @@
   label {
     display: block;
     margin-bottom: 5px;
-    color: rgb(239, 214, 239);
+    color: #ebe5d4;
+    /* rgb(239, 214, 239); */
   }
   
   input {
     width: 100%;
     padding: 10px;
-    border: 1px solid rgb(203, 100, 227);
+    border: 1px solid #b29a83;
+    /* rgb(203, 100, 227); */
     border-radius: 5px;
     box-sizing: border-box;
   }
   
   .button {
-    background-color: #8f5380;
+    background-color: #b29a83;
     color: #fff;
     padding: 10px 20px;
     border: none;

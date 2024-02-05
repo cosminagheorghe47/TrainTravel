@@ -24,9 +24,13 @@ export class LoginComponent {
       const { username, password } = this.loginForm.value;
       this.authService.login(username, password).subscribe(
         () => {
-          // Redirect to home page upon successful login
-          console.log('it works');
-          this.router.navigate(['/']);
+          if(this.authService.getBookingId()){
+            this.router.navigate(['/bookings',this.authService.getBookingId() ]);
+          }
+          else{
+            this.router.navigate(['/']);
+          }
+          
         },
         error => {
           // Handle login error

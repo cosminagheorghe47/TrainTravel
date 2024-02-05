@@ -1,0 +1,12 @@
+<div class="page-container">
+    <h2 class="res-text">My Bookings</h2>
+    <div class="booking-container">
+      <div *ngFor="let booking of bookings[0]?.data" class="booking-box">
+        <p><strong>Train Name:</strong> {{ booking.trainName }}</p>
+        <p><strong>Train No:</strong> {{ booking.trainNo }}</p>
+        <p><strong>Departure Station:</strong> {{ booking.departureStationName }}</p>
+        <p><strong>Seat No:</strong> {{ booking.seatNo }}</p>
+      </div>
+    </div>
+  </div>
+  

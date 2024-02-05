@@ -1,6 +1,7 @@
 <!-- login.component.html -->
+<div class="register">
 <div class="register-container">
-    <h2>Login</h2>
+    <h2>Register</h2>
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="id">Code</label>
@@ -32,4 +33,4 @@
       <button type="submit" [disabled]="registerForm.invalid">Register</button>
     </form>
   </div>
-  
+</div>
