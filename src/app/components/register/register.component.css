@@ -5,7 +5,7 @@
   align-items: center;
   text-align: center;
   padding: 30px;
-  background-color: #DFB6B2;
+  background-color: #e4dfd9;
   color: #fff;
   min-height: 600px;
   width: 100%;
@@ -14,7 +14,7 @@
 .register-container {
   width: 100%; /* Set width to 100% */
   max-width: 600px; /* Set a max-width to control the container width */
-  background-color: #854F6c;
+  background-color: #5e6c5b;
   padding: 40px;
   border-radius: 8px;
   box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.1);
@@ -34,7 +34,7 @@
   }
   
   button {
-    background-color: #4caf50;
+    background-color: #b29a83;
     color: white;
     padding: 0.5em;
     border: none;

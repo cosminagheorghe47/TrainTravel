@@ -5,7 +5,7 @@
   align-items: center;
   text-align: center;
   padding: 30px;
-  background-color: #DFB6B2;
+  background-color: #e3ded8;
   color: #fff;
   min-height: 600px;
   width: 100%;
@@ -14,10 +14,10 @@
 .login-container {
   width: 100%; 
   max-width: 600px;
-  background-color: #854F6c;
+  background-color: #5e6c5b;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: #b29a83;
 }
 
 .form-group {
@@ -38,7 +38,7 @@ input {
 }
 
 button {
-  background-color: #4caf50;
+  background-color: #b29a83;
   color: white;
   padding: 0.5em;
   border: none;
@@ -48,4 +48,7 @@ button {
 button:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
+}
+.p{
+  color: #b29a83;
 }
