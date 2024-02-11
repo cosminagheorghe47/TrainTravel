@@ -1,4 +1,4 @@
-// auth.service.ts
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, BehaviorSubject } from 'rxjs';
@@ -46,7 +46,6 @@ export class AuthService {
             phone: response.data.phone,
           };
 
-          // Store user data in BehaviorSubject
           this.currentUserSubject.next(userData);
         }
       })
@@ -54,7 +53,6 @@ export class AuthService {
   }
 
   logout() {
-    // Clear user data
     this.currentUserSubject.next(null);
   }
 
@@ -71,19 +69,9 @@ export class AuthService {
       tap((response: any) => {
         if (response.result && response.data) {
           console.log(response.data);
-          // const userData: UserData = {
-          //   passengerID: response.data.passengerID,
-          //   firstName: response.data.firstName,
-          //   lastName: response.data.lastName,
-          //   email: response.data.email,
-          //   phone: response.data.phone,
-          // };
 
-          // Store user data in BehaviorSubject
-          //this.currentUserSubject.next(userData);
         }
       })
     );
   }
-  // Implement other authentication-related functions if needed
 }

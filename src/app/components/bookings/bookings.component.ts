@@ -12,7 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class BookingsComponent implements OnInit {
   trainId: string | null = null;
-  currentUser: any; // Change the type as per your UserData interface
+  currentUser: any; 
   bookingForm: FormGroup;
 
   constructor(
@@ -23,10 +23,8 @@ export class BookingsComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.bookingForm = this.fb.group({
-      // Define your form controls here
       passengerName: ['', Validators.required],
       age: ['', Validators.required],
-      // Add more controls as needed
     });
   }
 
@@ -58,24 +56,20 @@ export class BookingsComponent implements OnInit {
 
       this.bookingService.bookTrain(bookingData).subscribe(
         response => {
-          // Handle success, e.g., show a success message
           console.log('Booking successful:', response);
           this.openSnackBar('Booking successful', 'Close');
         },
         error => {
-          // Handle error, e.g., show an error message
           console.error('Booking failed:', error);
           this.openSnackBar('Booking failed', 'Close');
         }
       );
     } else {
-      // Form is not valid, handle accordingly
       console.error('Invalid form');
     }
   }
   openSnackBar(message: string, action: string): void {
     this._snackBar.open(message, action, {
-      duration: 3000, // Duration in milliseconds
       horizontalPosition: 'center',
       verticalPosition: 'bottom',
     });

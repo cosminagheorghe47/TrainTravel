@@ -39,8 +39,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   initializeMap() {
-    // Set the initial display point to be in Romania
-    const initialLocation: L.LatLngExpression = [45.9432, 24.9668]; // Latitude, Longitude
+    const initialLocation: L.LatLngExpression = [45.9432, 24.9668];
 
     const mymap = L.map('mapid').setView(initialLocation, 6);
 
@@ -48,8 +47,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
       attribution: '© OpenStreetMap contributors',
     }).addTo(mymap);
 
-    // Add markers or other map features as needed
-    // Example marker:
     L.marker(initialLocation).addTo(mymap).bindPopup('Hello from Romania!');
   }
 }
