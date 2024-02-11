@@ -40,4 +40,7 @@ export class MyBookingsComponent implements OnInit {
       );
   }
 }
+formatDepartureDate(dateString: string): string {
+  return dateString.replace('T', ' ');
+}
 }
